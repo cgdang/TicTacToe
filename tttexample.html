@@ -1,0 +1,29 @@
+<html x-ng-app="gameApp">
+<head>
+	<title>TIC | TAC | TOE</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" href="tab.png">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="tic_script.js"></script>
+	<style>
+		.board {width:100px; height:100px; float:left; border:3px solid orange;}
+		.clear {clear:both;}
+	</style>
+</head>
+
+
+<body x-ng-controller="GameController" x-ng-init="rows = [[0,0,0],[0,0,0],[0,0,0]]">
+
+<h1>tic tac toe</h1>
+
+	<div class="clear" x-ng-repeat="x in rows track by $index">
+	<!-- <div x-ng-repeat="b in board track by $index">{{ b }}</div> -->
+
+	<div class="board" x-ng-repeat="col in x track by $index"
+		 x-ng-click="playerTurn($parent.$index, $index);">
+		 <!-- This is a nested conditional that tests col against 1, 0, and -1 -->
+		{{ ((col == 1)?"X" : ( col == -1 ? "O" : "") ) }}
+	</div>
+
+</body>
+</html>

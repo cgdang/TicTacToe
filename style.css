@@ -1,0 +1,21 @@
+.cells {
+	width: 150px;
+	height: 150px;
+	background-color: black;
+	border: 2px solid white;
+	float: left;
+	color: white;
+}
+
+.container {
+	width: 462px;
+	margin: 0 auto;
+}
+
+/*.bggrey {
+	background-color: grey;
+}*/
+
+.xBackground {
+	background-color: grey;
+}
