@@ -104,6 +104,15 @@ function TictactoeController($scope) {
 		$scope.board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
 		clickedSpaces = 0;
 		win = false;
+		jacksonWins = false;
+		jordanWins = false;
+	};
+
+	$scope.hideBoard = function() {
+		if (win === true)
+			return true;
+		else
+			return false;
 	};
 
 	$scope.mJacksonWins = function() {
