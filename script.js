@@ -43,20 +43,20 @@ function TictactoeController($scope) {
 	};
 
 	$scope.clicker = function(cellIndex) {
-		if ($scope.board[cellIndex] == " ") {
+		if ($scope.board[cellIndex] == " " && win === false) {
 			clickedSpaces++;
 			if (clickedSpaces % 2 === 0) {
 				$scope.board[cellIndex] = "o";
 				$scope.board.push[cellIndex];
-				console.log($scope.board);
 				checkWin();
-
 			} else {
 				$scope.board[cellIndex] = "x";
 				$scope.board.push[cellIndex];
-				console.log($scope.board);
 				checkWin();
-			}	
+			}
+			console.log(clickedSpaces);	
+			console.log($scope.board);
+			console.log(win);
 		} else {
 			// alert("MJ, PICK ANOTHER ONE");
 		}	
@@ -81,13 +81,6 @@ function TictactoeController($scope) {
 		else
 			return false;
 	};
-
-	// $scope.invalidClick = function() {
-	// 	if ($scope.clicker(cellIndex) === false)
-	// 		return true;
-	// 	else
-	// 		return false;
-	// };
 
 }
 
