@@ -10,10 +10,9 @@
 	<div class="container">
 		<div x-ng-class="{cells: true, xClick: b == 'x', oClick: b == 'o'}" x-ng-repeat="b in board track by $index" x-ng-click="clicker($index)"> {{ b }} </div>
 		<button x-ng-click="reset();">NEW GAME</button>
-		<div x-ng-show="mjwins();">MJ WINS</div>
-		<div x-ng-show="draw();">DRAW</div>
-	</div>
-		
+		<div x-ng-show="mjwins();" class="mjwins">MJ WINS</div>
+		<div x-ng-show="draw();" class="draw">DRAW</div>
+	</div>	
 </body>
 </html>
 

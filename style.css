@@ -67,3 +67,25 @@ button {
 button:hover {
 	text-shadow: 0 0 5px #ff0000;
 }
+
+.mjwins {
+	width: 500px;
+	height: 550px;
+	margin-top: -530px;
+	margin-left: -19px;
+	position: absolute;
+	background-color: black;
+	text-align: center;
+	opacity: 0.4;
+}
+
+.draw {
+	width: 500px;
+	height: 550px;
+	margin-top: -530px;
+	margin-left: -19px;
+	position: absolute;
+	background-color: black;
+	text-align: center;
+	opacity: 0.4;
+}
