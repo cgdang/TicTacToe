@@ -1,21 +1,69 @@
+body {
+	background: url("images/mjdance.gif") no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
 .cells {
 	width: 150px;
 	height: 150px;
+	margin: 2px;
 	background-color: black;
-	border: 2px solid white;
+	/*border: 2px solid white;*/
+	border-radius: 25px;
 	float: left;
 	color: white;
+	opacity: 0.8;
+}
+
+.cells:hover {
+	opacity: 0.4;
 }
 
 .container {
 	width: 462px;
-	margin: 0 auto;
+	/*border: 1px dotted black;*/
+	margin: 100px auto;
+	text-align: center;
 }
 
-/*.bggrey {
-	background-color: grey;
-}*/
+p {
+	text-align: center;
+	font-family: futura;
+	font-size: 50px;
+}
 
-.xBackground {
-	background-color: grey;
+.xClick {
+	background: url("images/mjshoes.jpg");
+	background-position: center;
+	opacity: 1.0;
+	font-size: 0;
+	/*text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;*/
+}
+
+.oClick {
+	background: url("images/jumpman.jpg");
+	background-position: center;
+	opacity: 1.0;
+	font-size: 0;
+	/*text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;*/
+}
+
+button {
+	background-color: #8B0000;
+	color: black;
+	font-family: futura;
+	font-weight: bold;
+	border-radius: 25px;
+	border: 0;
+	padding: 5px;
+	margin-top: 25px;
+}
+
+button:hover {
+	text-shadow: 0 0 5px #ff0000;
 }
