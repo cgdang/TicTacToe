@@ -68,7 +68,7 @@ button:hover {
 	text-shadow: 0 0 5px #ff0000;
 }
 
-.mjwins {
+.jordanwins {
 	width: 500px;
 	height: 550px;
 	margin-top: -530px;
@@ -76,7 +76,16 @@ button:hover {
 	position: absolute;
 	background-color: black;
 	text-align: center;
-	opacity: 0.4;
+}
+
+.jacksonwins {
+	width: 500px;
+	height: 550px;
+	margin-top: -530px;
+	margin-left: -19px;
+	position: absolute;
+	background-color: black;
+	text-align: center;
 }
 
 .draw {
@@ -87,5 +96,4 @@ button:hover {
 	position: absolute;
 	background-color: black;
 	text-align: center;
-	opacity: 0.4;
 }

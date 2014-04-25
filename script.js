@@ -5,38 +5,74 @@ function TictactoeController($scope) {
 
 	var win = false;
 
+	var jacksonWins = false;
+
+	var jordanWins = false;
+
 	var checkWin = function() {
 	if ($scope.board[0] == $scope.board[1] && $scope.board[2] == $scope.board[1] && $scope.board[1] != " ") {
 		win = true;
-		// alert("MJ WINS");
+		if ($scope.board[0] == 'x') {
+			jacksonWins = true;
+		} else {
+			jordanWins = true;
+		}
 	}
 	if ($scope.board[3] == $scope.board[4] && $scope.board[5] == $scope.board[4] && $scope.board[4] != " ") {
 		win = true;
-		// alert("MJ WINS");
+		if ($scope.board[3] == 'x') {
+			jacksonWins = true;
+		} else {
+			jordanWins = true;
+		}
 	}
 	if ($scope.board[6] == $scope.board[7] && $scope.board[8] == $scope.board[7] && $scope.board[7] != " ") {
 		win = true;
-		// alert("MJ WINS");
+		if ($scope.board[6] == 'x') {
+			jacksonWins = true;
+		} else {
+			jordanWins = true;
+		}
 	}
 	if ($scope.board[0] == $scope.board[3] && $scope.board[6] == $scope.board[3] && $scope.board[3] != " ") {
 		win = true;
-		// alert("MJ WINS");
+		if ($scope.board[0] == 'x') {
+			jacksonWins = true;
+		} else {
+			jordanWins = true;
+		}
 	}
 	if ($scope.board[1] == $scope.board[4] && $scope.board[7] == $scope.board[4] && $scope.board[4] != " ") {
 		win = true;
-		// alert("MJ WINS");
+		if ($scope.board[1] == 'x') {
+			jacksonWins = true;
+		} else {
+			jordanWins = true;
+		}
 	}
 	if ($scope.board[2] == $scope.board[5] && $scope.board[8] == $scope.board[5] && $scope.board[5] != " ") {
 		win = true;
-		// alert("MJ WINS");
+		if ($scope.board[2] == 'x') {
+			jacksonWins = true;
+		} else {
+			jordanWins = true;
+		}
 	}
 	if ($scope.board[0] == $scope.board[4] && $scope.board[8] == $scope.board[4] && $scope.board[4] != " ") {
 		win = true;
-		// alert("MJ WINS");
+		if ($scope.board[0] == 'x') {
+			jacksonWins = true;
+		} else {
+			jordanWins = true;
+		}
 	}
 	if ($scope.board[2] == $scope.board[4] && $scope.board[6] == $scope.board[4] && $scope.board[4] != " ") {
 		win = true;
-		// alert("MJ WINS");
+		if ($scope.board[2] == 'x') {
+			jacksonWins = true;
+		} else {
+			jordanWins = true;
+		}
 	} else if(clickedSpaces == 9  && win === false) {
 		// alert("DRAW");
 	}
@@ -57,6 +93,8 @@ function TictactoeController($scope) {
 			console.log(clickedSpaces);	
 			console.log($scope.board);
 			console.log(win);
+			console.log("jackson wins " + jacksonWins);
+			console.log("jordan wins " + jordanWins);
 		} else {
 			// alert("MJ, PICK ANOTHER ONE");
 		}	
@@ -68,8 +106,15 @@ function TictactoeController($scope) {
 		win = false;
 	};
 
-	$scope.mjwins = function() {
-		if (win === true)
+	$scope.mJacksonWins = function() {
+		if (jacksonWins === true)
+			return true;
+		else
+			return false;
+	};
+
+	$scope.mJordanWins = function() {
+		if (jordanWins === true)
 			return true;
 		else
 			return false;
