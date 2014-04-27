@@ -3,12 +3,14 @@
 <head>
 	<title>JAM</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script> 
+	<script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
 	<script src="script.js"></script>
 	<link rel="stylesheet" href="style.css" />
 </head>
-<body x-ng-app="" x-ng-controller="TictactoeController">
+<body x-ng-app="gameApp" x-ng-controller="TictactoeController">
 	<div class="container">
-		<div x-ng-class="{cells: true, xClick: b == 'x', oClick: b == 'o'}" x-ng-repeat="b in board track by $index" x-ng-click="clicker($index)"> {{ b }} </div>
+		<div x-ng-class="{cells: true, xClick: b == 'x', oClick: b == 'o'}" x-ng-repeat="b in game.board track by $index" x-ng-click="clicker($index)"> {{ b }} </div>
 		<button x-ng-click="reset();">NEW GAME</button>
 		<div x-ng-show="mJordanWins();" class="jordanwins"><img src="images/gamejordan.svg"</img></div>
 		<div x-ng-show="mJacksonWins();" class="jacksonwins"><img src="images/gamejackson.svg"</img></div>
