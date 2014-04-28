@@ -7,15 +7,25 @@
 	<script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
 	<script src="script.js"></script>
 	<link rel="stylesheet" href="style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Codystar' rel='stylesheet' type='text/css'>
 </head>
 <body x-ng-app="gameApp" x-ng-controller="TictactoeController">
 	<div class="container">
 		<div x-ng-class="{cells: true, xClick: b == 'x', oClick: b == 'o'}" x-ng-repeat="b in game.board track by $index" x-ng-click="clicker($index)"> {{ b }} </div>
-		<button x-ng-click="reset();">NEW GAME</button>
-		<div x-ng-show="mJordanWins();" class="jordanwins"><img src="images/gamejordan.svg"</img></div>
-		<div x-ng-show="mJacksonWins();" class="jacksonwins"><img src="images/gamejackson.svg"</img></div>
-		<div x-ng-show="draw();" class="draw">DRAW</div>
-	</div>	
+		<button class="new-game" x-ng-click="reset()">NEW GAME</button>
+		<div x-ng-show="mJordanWins()" class="jordanwins">
+			<p class="win-tie">GAME: JORDAN</p>
+			<button class="reset" x-ng-click="reset()">PLAY AGAIN?</button>
+		</div>
+		<div x-ng-show="mJacksonWins()" class="jacksonwins">
+			<p class="win-tie">GAME: JACKSON</p>
+			<button class="reset" x-ng-click="reset()">PLAY AGAIN?</button>
+		</div>
+		<div x-ng-show="draw()" class="draw">
+			<p class="win-tie">TIED GAME</p>
+			<button class="reset" x-ng-click="reset()">PLAY AGAIN?</button>
+		</div>
+	</div>
 </body>
 </html>
 

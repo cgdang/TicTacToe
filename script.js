@@ -149,6 +149,7 @@ gameApp.controller("TictactoeController",function($scope, $firebase) {
 		$scope.game.jacksonWins = false;
 		$scope.game.jordanWins = false;
 		$scope.game.$save();
+		$
 	};
 
 	$scope.hideBoard = function() {
