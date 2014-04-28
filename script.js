@@ -126,11 +126,9 @@ gameApp.controller("TictactoeController",function($scope, $firebase) {
 			$scope.game.clickedSpaces++;
 			if ($scope.game.clickedSpaces % 2 === 0) {
 				$scope.game.board[cellIndex] = "o";
-				//$scope.game.board.push[cellIndex];
 				checkWin();
 			} else {
 				$scope.game.board[cellIndex] = "x";
-				//$scope.game.board.push[cellIndex];
 				checkWin();
 			}
 			console.log($scope.game.clickedSpaces);
@@ -142,6 +140,7 @@ gameApp.controller("TictactoeController",function($scope, $firebase) {
 		$scope.game.$save();
 	};
 
+	// For the "New Game" button to clear the board
 	$scope.reset = function() {
 		$scope.game.board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
 		$scope.game.clickedSpaces = 0;
@@ -149,16 +148,9 @@ gameApp.controller("TictactoeController",function($scope, $firebase) {
 		$scope.game.jacksonWins = false;
 		$scope.game.jordanWins = false;
 		$scope.game.$save();
-		$
 	};
 
-	$scope.hideBoard = function() {
-		if ($scope.game.win === true)
-			return true;
-		else
-			return false;
-	};
-
+	// Michael Jackson wins popup 
 	$scope.mJacksonWins = function() {
 		if ($scope.game.jacksonWins === true)
 			return true;
@@ -166,6 +158,7 @@ gameApp.controller("TictactoeController",function($scope, $firebase) {
 			return false;
 	};
 
+	// Michael Jordan wins popup 
 	$scope.mJordanWins = function() {
 		if ($scope.game.jordanWins === true)
 			return true;
@@ -173,6 +166,7 @@ gameApp.controller("TictactoeController",function($scope, $firebase) {
 			return false;
 	};
 
+	// Tied game popup
 	$scope.draw = function() {
 		if ($scope.game.clickedSpaces === 9  && $scope.game.win === false)
 			return true;
